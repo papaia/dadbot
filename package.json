@@ -1,0 +1,11 @@
+{
+  "name": "dadbot",
+  "private": true,
+  "dependencies": {
+    "discord.js": "github:discordjs/discord.js"
+  },
+  "scripts": {
+    "start": "node src",
+    "test": "nodemon --exec \"npm start\""
+  }
+}
