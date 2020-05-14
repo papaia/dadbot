@@ -1,5 +1,8 @@
 const {
   Client,
+  Intents: {
+    FLAGS: { DIRECT_MESSAGES, GUILDS, GUILD_MESSAGES },
+  },
   Permissions: {
     FLAGS: { EMBED_LINKS, SEND_MESSAGES },
   },
@@ -7,7 +10,10 @@ const {
 } = require('discord.js');
 const { token, ignore } = require('../config.json');
 
-const client = new Client({ disableMentions: 'everyone' });
+const client = new Client({
+  disableMentions: 'everyone',
+  ws: { intents: [GUILDS, DIRECT_MESSAGES, GUILD_MESSAGES] },
+});
 
 client.once('ready', () => console.log(`Ready as ${client.user.tag}`));
 
