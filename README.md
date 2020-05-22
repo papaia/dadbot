@@ -15,3 +15,9 @@ A simple Discord bot that continues the dead `Hi X, I'm dad!` joke
 `token` - Your bot token
 
 ### See example file [`config.example.json`](./config.example.json)
+
+# Examples
+
+![In servers](assets/server.png)
+![In DMs](assets/direct.png)
+![Different triggers](assets/triggers.png)
