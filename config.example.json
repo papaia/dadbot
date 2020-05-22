@@ -1,4 +1,4 @@
 {
   "token": "Your bot token",
-  "ignore": ["ID1", "ID2"]
+  "ignoredGuilds": ["ID1", "ID2"]
 }

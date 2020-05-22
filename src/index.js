@@ -8,7 +8,7 @@ const {
   },
   Util: { cleanContent },
 } = require('discord.js');
-const { token, ignore } = require('../config.json');
+const { token, ignoredGuilds } = require('../config.json');
 
 const client = new Client({
   disableMentions: 'everyone',
@@ -22,7 +22,7 @@ const dadRegex = /i(?:(?: a|')?m|\sbe)\s/i;
 
 client.on('message', (message) => {
   if (message.author.bot) return null;
-  if (ignore.includes(message.guild?.id)) return null;
+  if (ignoredGuilds.includes(message.guild?.id)) return null;
 
   let embed = true;
   if (message.guild) {
