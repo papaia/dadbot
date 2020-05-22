@@ -32,15 +32,15 @@ client.on('message', (message) => {
   }
   const match = message.content.match(dadRegex);
   if (!match) return false;
-  const send = `Hi ${message.content.slice(match.index + match[0].length)}, I'm dad!`;
-  if (send.length > 550) return false;
+  const reply = `Hi ${message.content.slice(match.index + match[0].length)}, I'm dad!`;
+  if (reply.length > 550) return false;
   if (!message.guild) {
-    return message.channel.send(send);
+    return message.channel.send(reply);
   }
   if (embed) {
-    return message.channel.send({ embed: { description: send } });
+    return message.channel.send({ embed: { description: reply } });
   }
-  return message.channel.send(cleanContent(send, message));
+  return message.channel.send(cleanContent(reply, message));
 });
 
 client.login(token);
