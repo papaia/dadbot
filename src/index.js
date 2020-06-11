@@ -8,11 +8,11 @@ const {
   },
   Util: { cleanContent },
 } = require('discord.js');
-const { token, ignoredGuilds } = require('../config.json');
+const { ignoredGuilds, token } = require('../config.json');
 
 const client = new Client({
   disableMentions: 'everyone',
-  ws: { intents: [GUILDS, DIRECT_MESSAGES, GUILD_MESSAGES] },
+  ws: { intents: [DIRECT_MESSAGES, GUILDS, GUILD_MESSAGES] },
 });
 
 client.once('ready', () => console.log(`Ready as ${client.user.tag}`));
@@ -27,8 +27,8 @@ client.on('message', (message) => {
   let embed = true;
   if (message.guild) {
     const perms = message.channel.permissionsFor(client.user);
-    embed = perms.has(EMBED_LINKS);
     if (!perms.has(SEND_MESSAGES)) return null;
+    embed = perms.has(EMBED_LINKS);
   }
   const match = message.content.match(dadRegex);
   if (!match) return false;
