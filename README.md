@@ -10,11 +10,21 @@ A simple Discord bot that continues the dead `Hi X, I'm dad!` joke
 
 ### Fields
 
-`ignoredGuilds` - An array of guild IDs to not reply in
-
-`token` - Your bot token
+- `token` - Your bot token
+- `ignoredGuilds` - An array of guild IDs to not reply in
 
 ### See example file [`config.example.json`](./config.example.json)
+
+## 3. Install dependencies
+
+Run `npm i` or use your favorite package manager
+
+## 4. Run it
+
+There are two available scripts:
+
+- `start` for starting normally
+- `test` for starting with [`nodemon`](https://github.com/remy/nodemon) (restart on file update)
 
 # Examples
 
