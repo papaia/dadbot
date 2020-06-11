@@ -8,7 +8,7 @@ const {
   },
   Util: { cleanContent },
 } = require('discord.js');
-const { ignoredGuilds, token } = require('../config.json');
+const { ignoredGuilds = [], token } = require('../config.json');
 
 const client = new Client({
   disableMentions: 'everyone',

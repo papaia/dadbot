@@ -11,7 +11,7 @@ A simple Discord bot that continues the dead `Hi X, I'm dad!` joke
 ### Fields
 
 - `token` - Your bot token
-- `ignoredGuilds` - An array of guild IDs to not reply in
+- `ignoredGuilds` (optional) - An array of guild IDs to not reply in
 
 ### See example file [`config.example.json`](./config.example.json)
 
