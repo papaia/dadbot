@@ -6,41 +6,41 @@ const {
   Permissions: {
     FLAGS: { EMBED_LINKS, SEND_MESSAGES },
   },
-  Util: { cleanContent },
 } = require('discord.js');
 const { ignoredGuilds = [], token } = require('../config.json');
 
 const client = new Client({
   disableMentions: 'everyone',
+  messageCacheMaxSize: 0,
   ws: { intents: [DIRECT_MESSAGES, GUILDS, GUILD_MESSAGES] },
 });
 
 client.once('ready', () => console.log(`Ready as ${client.user.tag}`));
 
 // i be / i am / im / i'm + space
-const dadRegex = /i(?:(?:\sa|')?m|\sbe)\s/i;
+const dadRegex = /i(?:(?:\sa|')?m|\sbe)\s(?=\S)/i;
 
 client.on('message', (message) => {
   if (message.author.bot) return null;
   if (ignoredGuilds.includes(message.guild?.id)) return null;
 
-  let embed = true;
   if (message.guild) {
     const perms = message.channel.permissionsFor(client.user);
-    if (!perms.has(SEND_MESSAGES)) return null;
-    embed = perms.has(EMBED_LINKS);
+    if (!perms.has([SEND_MESSAGES, EMBED_LINKS])) return null;
   }
+
   const match = message.content.match(dadRegex);
   if (!match) return false;
-  const reply = `Hi ${message.content.slice(match.index + match[0].length)}, I'm dad!`;
-  if (reply.length > 550) return false;
+
+  const name = message.content.slice(match.index + match[0].length).trim();
+  if (!name || name.length > 550) return false;
+
+  const reply = `Hi ${name}, I'm dad!`;
   if (!message.guild) {
     return message.channel.send(reply);
   }
-  if (embed) {
-    return message.channel.send({ embed: { description: reply } });
-  }
-  return message.channel.send(cleanContent(reply, message));
+
+  return message.channel.send({ embed: { description: reply } });
 });
 
 client.login(token);
