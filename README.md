@@ -28,6 +28,6 @@ There are two available scripts:
 
 # Examples
 
+![Different triggers](assets/triggers.png)
 ![In servers](assets/server.png)
 ![In DMs](assets/direct.png)
-![Different triggers](assets/triggers.png)
