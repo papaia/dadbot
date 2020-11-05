@@ -12,7 +12,7 @@ const { ignoredGuilds = [], token } = require('../config.json');
 const client = new Client({
   disableMentions: 'everyone',
   messageCacheMaxSize: 0,
-  intents: [DIRECT_MESSAGES, GUILDS, GUILD_MESSAGES],
+  intents: DIRECT_MESSAGES | GUILDS | GUILD_MESSAGES,
 });
 
 client.once('ready', () => console.log(`Ready as ${client.user.tag}`));
