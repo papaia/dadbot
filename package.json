@@ -2,7 +2,7 @@
   "name": "dadbot",
   "private": true,
   "dependencies": {
-    "discord.js": "^12.2.0"
+    "discord.js": "^12.5.1"
   },
   "devDependencies": {
     "@papaia/prettier": "^2.0.1"
