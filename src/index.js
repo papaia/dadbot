@@ -7,7 +7,7 @@ const {
     FLAGS: { EMBED_LINKS, SEND_MESSAGES },
   },
 } = require('discord.js');
-const { ignoredGuilds = [], token } = require('../config.json');
+const { token } = require('../config.json');
 
 const client = new Client({
   disableMentions: 'everyone',
@@ -22,7 +22,6 @@ const dadRegex = /i(?:(?:\s*a|')?m|\s*be)\s*(?=\S)/i;
 
 client.on('message', (message) => {
   if (message.author.bot) return null;
-  if (ignoredGuilds.includes(message.guild?.id)) return null;
 
   if (message.guild) {
     const perms = message.channel.permissionsFor(client.user);
