@@ -18,7 +18,7 @@ const client = new Client({
 client.once('ready', () => console.log(`Ready as ${client.user.tag}`));
 
 // i be / i am / im / i'm + space(s)
-const dadRegex = /i(?:(?:\s*a|')?m|\s*be)\s*(?=\S)/i;
+const dadRegex = /\bi(?:(?:\s*a|')?m|\s*be)\s*(?=\S)/i;
 
 client.on('message', (message) => {
   if (message.author.bot) return null;
