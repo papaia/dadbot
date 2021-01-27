@@ -25,7 +25,7 @@ client.on('message', (message) => {
 
   if (message.guild) {
     const perms = message.channel.permissionsFor(client.user);
-    if (!perms.has([SEND_MESSAGES, EMBED_LINKS])) return null;
+    if (!perms.has(SEND_MESSAGES | EMBED_LINKS)) return null;
   }
 
   const match = message.content.match(dadRegex);
