@@ -1,7 +1,7 @@
 dependencies:
   discord.js: 12.5.1
 devDependencies:
-  '@papaia/prettier': 2.0.1
+  '@papaia/prettier': 2.2.0
   nodemon: 2.0.7
 lockfileVersion: 5.2
 packages:
@@ -19,10 +19,10 @@ packages:
       node: '>= 6'
     resolution:
       integrity: sha512-ZfFsbgEXW71Rw/6EtBdrP5VxBJy4dthyC0tpQKGKmYFImlmmrykO14Za+BiIVduwjte0jXEBlhSKf0MWbFp9Eg==
-  /@papaia/prettier/2.0.1:
+  /@papaia/prettier/2.2.0:
     dev: true
     resolution:
-      integrity: sha512-Tu9GKX2yM7wcyhUBB2MahQT6f6FTHB3kK7LrHljWMsc4ByA63xeZCtiMkPzzY+wWjLGVZLjVeNAUf54BVYDGPA==
+      integrity: sha512-a15a1rGQba/ERu1vrhWvwkP/lx5hH9MBUihd1IJH5m/PRI0gTiLsuozHPyX5SAZ3OWqPk13oLkvA/y5bD6CiNQ==
   /@sindresorhus/is/0.14.0:
     dev: true
     engines:
@@ -963,6 +963,6 @@ packages:
     resolution:
       integrity: sha512-PSNhEJDejZYV7h50BohL09Er9VaIefr2LMAf3OEmpCkjOi34eYyQYAXUTjEQtZJTKcF0E2UKTh+osDLsgNim9Q==
 specifiers:
-  '@papaia/prettier': ^2.0.1
+  '@papaia/prettier': ^2.2.0
   discord.js: ^12.5.1
   nodemon: ^2.0.7
